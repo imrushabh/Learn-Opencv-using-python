@@ -1,0 +1,27 @@
+import cv2
+import numpy as nm
+def main():
+    
+    img=nm.zeros((512,512,3),nm.uint8)
+    
+    cv2.line(img,(45,98),(100,99),(255,145,0),3)
+    
+    cv2.rectangle(img,(45,57),(100,99),(255,145,0),3)
+    
+    cv2.circle(img,(76,98),10,(255,145,0),3)
+    
+    cv2.ellipse(img,(420,340),(40,50),0,0,360,(125,234,134),-1)
+    
+    pts = nm.array([[10,5],[200,30],[170,230],[50,10]], nm.int32)
+    pts = pts.reshape((-1,1,2))
+    cv2.polylines(img,[pts],True,(0,255,255))
+    
+    font = cv2.FONT_HERSHEY_SIMPLEX
+    cv2.putText(img,'imrushabh',(100,100), font, 2,(255,255,255),2,cv2.LINE_AA)
+    
+    cv2.imshow('rush',img)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+    
+if __name__=="__main__":
+    main()    
