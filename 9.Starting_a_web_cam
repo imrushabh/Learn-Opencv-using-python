@@ -1,0 +1,12 @@
+import cv2
+def main():
+    cap=cv2.VideoCapture(0)#we can use multiple web cams 0 indicates 1st one
+    #check if cam is open
+    if cap.isOpened():
+        ret,frame=cap.read()
+    print(ret)
+    cv2.imshow("ghj",frame)
+    cap.release()
+    
+if __name__=="__main__":
+    main()
