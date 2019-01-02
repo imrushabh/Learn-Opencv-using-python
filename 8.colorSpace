@@ -1,0 +1,16 @@
+#there are about 275 colour space available and u can easily convert one colour space to the other using opencv
+import cv2
+import matplotlib.pyplot as plt
+def main():
+    
+    imgpath="C:\\Users\\rusha\\Desktop\\7th sem\\virat.jpg"
+    img=cv2.imread(imgpath,1)
+    img=cv2.cvtColor(img,cv2.COLOR_BGR2RGB)
+    plt.title("lena ji")
+    
+    plt.imshow(img)
+    
+    plt.show()
+    
+if __name__=="__main__":
+    main()
