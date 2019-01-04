@@ -1,0 +1,27 @@
+import cv2
+def main():
+    windowName="opencv video player"
+    cv2.namedWindow(windowName)
+    #we can use multiple web cams
+    
+    filename="C:\\Users\\rusha\\Desktop\\virat1.avi"
+    cap=cv2.VideoCapture(filename)
+    
+    ret=True
+    while (cap.isOpened):
+        if cap.isOpened():
+            ret,frame=cap.read()
+        
+        if ret:
+            cv2.imshow(windowName,frame)
+            if cv2.waitKey(33)==27:
+                break;
+        else:
+            break;
+    cap.release()
+    
+    cv2.destroyWindow(windowName)
+    
+if __name__=="__main__":
+    main()
+    
